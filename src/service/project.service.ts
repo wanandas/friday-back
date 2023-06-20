@@ -16,14 +16,14 @@ type IData = {
 export class ProjectService {
   constructor(private readonly httpService: HttpService) {}
 
-  async findAll(): Promise<AxiosResponse<IData[]>> {
+  async findAllGithub(): Promise<AxiosResponse> {
     const repos = this.httpService.axiosRef.get(
       `https://api.github.com/users/wanandas/repos?per_page=100&sort=created`,
     );
 
     const { data } = await repos;
 
-    const result = data?.map((v) => {
+    const result = data?.map((v: IData) => {
       return {
         id: v.id,
         created_at: v.created_at,

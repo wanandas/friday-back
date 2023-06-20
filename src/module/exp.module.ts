@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import ExpController from 'src/controllers/exp/exp.controller';
+import { ExpController } from 'src/controllers';
 import { Exp } from 'src/entity';
-import { ExpService } from 'src/service/exp/exp.service';
+import { ExpService } from 'src/service/exp.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Exp])],

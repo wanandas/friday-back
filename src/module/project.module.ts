@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import ProjectController from 'src/controllers/project/project.controller';
-import { ProjectService } from 'src/service/project/project.service';
+import { ProjectService } from 'src/service/project.service';
 import { HttpModule } from '@nestjs/axios';
+import { ProjectController } from 'src/controllers';
 
 @Module({
   imports: [
